@@ -463,7 +463,7 @@ func main() {
 
 	// if android in platforms
 	if len(apks) == 0 && sliceutil.IsStringInSlice("android", platforms) {
-		fail("No apk generated: %d :: %s", len(apks), platforms)
+		fail("No apk generated: %d :: %v", len(apks), platforms)
 	}
 	// if ios in platforms
 	if sliceutil.IsStringInSlice("ios", platforms) {
