@@ -442,7 +442,7 @@ func main() {
 		log.Infof("Collecting android outputs")
 				
 		apks, err = findArtifact(androidOutputDir, "apk", buildStart)
-		if err != nil {
+		if err != nil ||  len(apks) == 0 {
 			apks, err = findArtifact(androidOutputDir, "aab", buildStart)
 			if err != nil {
 				fail("Failed to find apks/aab in dir (%s), error: %s", androidOutputDir, err)
